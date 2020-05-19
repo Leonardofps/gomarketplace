@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useEffect } from 'react';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { View, Text } from 'react-native';
+import { View, Animated } from 'react-native';
 
 import {
   Container,
