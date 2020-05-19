@@ -34,7 +34,7 @@ const CartProvider: React.FC = ({ children }) => {
         '@GoMarketplace:product',
       );
       if (loadingProduct) {
-        setProducts([...JSON.parse(loadingProduct)]);
+        setProducts(JSON.parse(loadingProduct));
       }
     }
 
@@ -65,7 +65,7 @@ const CartProvider: React.FC = ({ children }) => {
       const filterProduct = products.filter(product => product.id !== id);
       const productExists = products.find(product => product.id === id);
 
-      if (filterProduct && productExists.quantity > 1) {
+      if (filterProduct && productExists?.quantity > 1) {
         const requestProduct = products.map(product =>
           product.id === id
             ? { ...product, quantity: product.quantity - 1 }
